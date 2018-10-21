@@ -1,0 +1,5 @@
+---
+yarn_version: 1.10.1-1
+node_version: "{{ node_major_version }}.{{ node_minor_version }}.0"
+node_major_version: 8
+node_minor_version: 12

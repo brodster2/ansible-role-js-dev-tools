@@ -1,0 +1,20 @@
+---
+- name: Add the nodesource repo
+  yum:
+    name: "https://rpm.nodesource.com/pub_{{node_major_version}}.x/el/7/x86_64/nodejs-{{node_version}}-1nodesource.x86_64.rpm"
+    state: present
+
+- name: Install Node
+  yum:
+    name: "nodejs"
+    state: present
+
+- name: Add the Yarn repo
+  get_url:
+    url: https://dl.yarnpkg.com/rpm/yarn.repo
+    dest: /etc/yum.repos.d/
+
+- name: Install Yarn
+  yum:
+    name: "yarn-{{ yarn_version }}"
+    state: present

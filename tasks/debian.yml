@@ -1,0 +1,37 @@
+---
+- name: Add nodesource key
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+
+- name: Add the nodesource repo
+  template:
+    src: templates/nodesource.list.j2
+    dest: /etc/apt/sources.list.d/nodesource.list
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Add the yarn key
+  apt_key:
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+    state: present
+
+- name: Add the Yarn repo
+  template:
+    src: templates/yarn.list.j2
+    dest: /etc/apt/sources.list.d/yarn.list
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Install Node
+  apt:
+    name: "nodejs={{ node_version }}-1nodesource1"
+    state: present
+    update_cache: yes
+
+- name: Install Yarn
+  apt:
+    name: "yarn={{ yarn_version }}"
+    state: present
