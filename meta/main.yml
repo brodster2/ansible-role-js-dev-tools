@@ -1,0 +1,20 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: brodster2
+  description: Install Node and Yarn for local JS development.
+  license: "license (MIT)"
+  min_ansible_version: 2.4
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    - name: Ubuntu
+      versions:
+        - xenial
+  galaxy_tags:
+    - Node
+    - Yarn
+    - JavaScript
+    - Development
