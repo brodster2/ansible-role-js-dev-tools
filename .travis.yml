@@ -6,7 +6,7 @@ services: docker
 
 install:
   # Install test dependencies
-  - pip install --requirement requirements.txt
+  - pip install ansible==2.7.0 docker==3.5.1
 
 script:
   - molecule test
