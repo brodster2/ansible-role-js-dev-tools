@@ -4,6 +4,13 @@
     name: "https://rpm.nodesource.com/pub_{{node_major_version}}.x/el/7/x86_64/nodejs-{{node_version}}-1nodesource.x86_64.rpm"
     state: present
 
+# RELEASE_URL="\
+# https://rpm.nodesource.com/${NODEREPO}/\
+# ${DIST_TYPE}/\
+# ${DIST_VERSION}/\
+# ${DIST_ARCH}/\
+# nodesource-release-${RELEASE_URL_VERSION_STRING}-1.noarch.rpm
+
 - name: Install Node
   yum:
     name: "nodejs"
